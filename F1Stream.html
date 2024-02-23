@@ -3,40 +3,44 @@
     <style>
 
 body {
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(24, 24, 24));
-}
+            background-color: #0e0e0e; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Use a more modern font */
+        }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-  overflow: hidden;
-  background-color: #111111;
-  top: 0;
-  width: 99.5%;
-  position: fixed;
-}
+        ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333; /* Darker navigation bar */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        }
 
-li {
-  float: left;
-    text-align: center;
-}
+        li {
+            float: left;
+        }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: sans-serif;
-}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 16px; /* Increase padding */
+            text-decoration: none;
+            transition: background-color 0.3s; /* Add smooth transition */
+        }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
+        li a:hover:not(.active) {
+            background-color: #555; /* Darker color on hover */
+        }
 
-.active {
-  background-color: #1100ff;
-}
+        .active {
+            background-color: #0004ff; /* Green color for active link */
+        }
 
 h1 {
     font-family: sans-serif;
@@ -55,7 +59,7 @@ h4 {
 
         <ul>
             <li><a href="index.html">RoArthur</a></li>
-            <li><a class="active" href="#F1">F1 Stream</a></li>
+            <li><a class="active" href="#F1">Skysports Live</a></li>
           </ul>
 
 <h1>F1 STREAM</h1>
