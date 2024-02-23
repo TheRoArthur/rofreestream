@@ -4,21 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            background-image: linear-gradient(rgb(0, 0, 0), rgb(24, 24, 24));
+            background-color: #0e0e0e; /* Light gray background */
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: Arial, sans-serif; /* Use a more modern font */
         }
 
         ul {
             list-style-type: none;
             padding: 0;
             overflow: hidden;
-            background-color: #111111;
+            background-color: #333; /* Darker navigation bar */
+            position: fixed;
             top: 0;
             width: 100%;
-            position: fixed;
-            z-index: 1000; /* Ensure navigation bar stays on top */
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         }
 
         li {
@@ -29,22 +30,25 @@
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 20px 16px; /* Increase padding */
             text-decoration: none;
+            transition: background-color 0.3s; /* Add smooth transition */
         }
 
         li a:hover:not(.active) {
-            background-color: #111;
+            background-color: #555; /* Darker color on hover */
         }
 
         .active {
-            background-color: #1100ff;
+            background-color: #0004ff; /* Green color for active link */
         }
 
         h1 {
-            padding-top: 80px; /* Adjust spacing for mobile */
+            padding-top: 100px; /* Adjust spacing for heading */
             text-align: center;
-            color: aliceblue;
+            color: #ffffff; /* Dark text color */
+            margin: 0; /* Remove default margin */
+            display: block;
         }
 
         .videos-container {
@@ -57,34 +61,90 @@
         }
 
         .video {
-            width: 100%; /* Take full width on mobile */
-            max-width: 600px; /* Limit width on larger screens */
-            margin: 10px;
+            width: calc(50% - 40px); /* Adjust width for responsive grid */
+            margin: 20px;
+            background-color: #000000; /* White background for videos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            transition: box-shadow 0.3s; /* Add smooth transition */
+        }
+
+        .video:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
         }
 
         .video iframe {
             width: 100%;
-            height: 300px; /* Adjust height as needed */
+            height: 400px; /* Make the iframe fill its container */
+            border: none; /* Remove iframe border */
+        }
+
+        .live-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .live {
+            width: calc(100% - 40px); /* Adjust width for responsive grid */
+            margin: 20px;
+            background-color: #000000; /* White background for videos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            transition: box-shadow 0.3s; /* Add smooth transition */
+        }
+
+        .live:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        .live iframe {
+            width: 100%;
+            height: 800px; /* Make the iframe fill its container */
+            border: none; /* Remove iframe border */
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                padding-top: 40px; /* Adjust spacing for smaller screens */
+            }
+            .video,
+            .live {
+                width: calc(100% - 40px); /* Full width for smaller screens */
+            }
         }
     </style>
 </head>
 <body>
 
-    <ul>
-        <li><a class="active" href="#home">RoArthur</a></li>
-        <li><a href="F1Stream.html">Sky Sports Livestream</a></li>
-    </ul>
+<ul>
+    <li><a class="active" href="#home">RoArthur</a></li>
+    <li><a href="F1Stream.html">Sky Sports Livestream</a></li>
+</ul>
 
-    <h1>MUST WATCH VIDEOS</h1>
+<h1>RECOMMENDED</h1>
 
-    <div class="videos-container">
-        <div class="video">
-            <iframe src="https://www.youtube.com/embed/78oSScbjmXY?si=YfhstK6d4LDvLJaC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-        <div class="video">
-            <iframe src="https://www.youtube.com/embed/GdmEjijrEz4?si=XqyAnEECE_kFlmxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+<div class="videos-container">
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/78oSScbjmXY?si=YfhstK6d4LDvLJaC" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/GdmEjijrEz4?si=XqyAnEECE_kFlmxY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<h1>NEXT UP</h1>
+
+<div class="live-container">
+    <div class="live">
+        <iframe src="https://www.youtube.com/embed/M8ADwCBohfo?si=DgSQgEu1H-2atNNG" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
 
 </body>
 </html>
