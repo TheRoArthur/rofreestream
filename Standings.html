@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PA Community Championship Standings</title>
     <style>
         body {
             background-color: #0e0e0e; /* Light gray background */
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif; /* Use a more modern font */
+            color: #ffffff; /* Set text color */
         }
 
+        /* Navigation styles */
         ul {
             list-style-type: none;
             padding: 0;
@@ -43,6 +47,7 @@
             background-color: #0004ff; /* Green color for active link */
         }
 
+        /* Header styles */
         h1 {
             padding-top: 100px; /* Adjust spacing for heading */
             text-align: center;
@@ -51,26 +56,75 @@
             display: block;
         }
 
+        /* Image styles */
         img {
             display: block;
             margin: 0 auto; /* Center the image */
-            padding-top: 20px; /* Adjust spacing */
             max-width: 100%; /* Ensure image doesn't exceed container width */
             height: auto; /* Maintain aspect ratio */
+            padding: 20px 0; /* Adjust spacing */
+        }
+
+        /* Live container styles */
+        .live-container {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Live video styles */
+        .live {
+            margin: auto; /* Center the live video */
+            background-color: #000000; /* White background for videos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow content */
+            transition: box-shadow 0.3s; /* Add smooth transition */
+            display: flex; /* Use flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .live:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        .live iframe {
+            width: 100%; /* Make the iframe fill its container */
+            height: auto; /* Maintain aspect ratio */
+            border: none; /* Remove iframe border */
+        }
+        
+        @media (min-width: 768px) {
+            /* Adjustments for tablets and desktops */
+            .live iframe {
+                height: 400px; /* Set a fixed height for larger screens */
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Navigation bar -->
 <ul>
-    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html">RoArthur</a></li>
     <li><a class="active" href="Standings.html">PA Community Championship</a></li>
 </ul>
 
+<!-- Main content -->
 <h1>PA Community Championship<br> STANDINGS</h1>
 
-<img src="StandingsIMG.png" alt="" width="500" height="333">
+<!-- Image -->
+<img src="StandingsIMG.png" alt="Standings Image">
 
+<!-- Next round heading -->
+<h1>NEXT ROUND!</h1>
+
+<!-- Live video container -->
+<div class="live-container">
+    <div class="live">
+        <iframe src="https://www.youtube.com/embed/PamBLT7KyWY?si=zrOMGw-6MbJb_oM-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
 
 </body>
 </html>
