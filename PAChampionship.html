@@ -1,130 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PA Community Championship Standings</title>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
+
+body {
             background-color: #0e0e0e; /* Light gray background */
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif; /* Use a more modern font */
-            color: #ffffff; /* Set text color */
-        }
-
-        /* Navigation styles */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333; /* Darker navigation bar */
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 20px 16px; /* Increase padding */
-            text-decoration: none;
-            transition: background-color 0.3s; /* Add smooth transition */
-        }
-
-        li a:hover:not(.active) {
-            background-color: #555; /* Darker color on hover */
-        }
-
-        .active {
-            background-color: #0004ff; /* Green color for active link */
-        }
-
-        /* Header styles */
-        h1 {
-            padding-top: 100px; /* Adjust spacing for heading */
-            text-align: center;
-            color: #ffffff; /* Dark text color */
-            margin: 0; /* Remove default margin */
-            display: block;
-        }
-
-        /* Image styles */
-        img {
-            display: block;
-            margin: 0 auto; /* Center the image */
-            max-width: 100%; /* Ensure image doesn't exceed container width */
-            height: auto; /* Maintain aspect ratio */
-            padding: 20px 0; /* Adjust spacing */
-        }
-
-        /* Live container styles */
-        .live-container {
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* Live video styles */
-        .live {
-            margin: auto; /* Center the live video */
-            background-color: #000000; /* White background for videos */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-            border-radius: 8px; /* Rounded corners */
-            overflow: hidden; /* Hide overflow content */
-            transition: box-shadow 0.3s; /* Add smooth transition */
-            display: flex; /* Use flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-        }
-
-        .live:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-        }
-
-        .live iframe {
-            width: 100%; /* Make the iframe fill its container */
-            height: auto; /* Maintain aspect ratio */
-            border: none; /* Remove iframe border */
         }
         
-        @media (min-width: 768px) {
-            /* Adjustments for tablets and desktops */
-            .live iframe {
-                height: 400px; /* Set a fixed height for larger screens */
-            }
-        }
+    .container {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  margin: auto;
+}
+
+    .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 42%;
+  border: none;
+  border-radius: 15px;
+}
+
+.mobile-container {
+  max-width: 380px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+  position: relative;
+}
+
+.topnav a:hover {
+  overflow: hidden;
+  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav #myLinks a:hover {
+    background: linear-gradient(to right, #33ccff 0%, #a600ff 100%);
+    color: #000000;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 40px;
+  display: block;
+  border: 1px solid #3c00ff;
+}
+
+.topnav a.icon {
+  background: rgb(0, 0, 0);
+  display: block;
+  position: absolute;
+  right: 2;
+  top: 2.5;
+}
+
+.topnav a.icon:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background: linear-gradient(to right, #000b6b 0%, #3a0059 100%);
+  color: white;
+}
+
+h1 {
+color: white;
+text-align: center;
+margin: 20px;
+}
+
+.Standings {
+  max-width: 100%;
+  height: auto;  
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
     </style>
-</head>
-<body>
+    </head>
+    <body>
 
-<!-- Navigation bar -->
-<ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a class="active" href="Standings.html">PA Community Championship</a></li>
-</ul>
+        <div class="topnav">
+            <a href="index.html" class="active">RoArthur.online</a>
+            <div id="myLinks">
+              <a href="PAChampionship.html">PA Community Championship</a>
+              <a href="Partners.html">Ro Partners</a>
+              <a href="F1Stream.html">SkySports F1 Stream</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
 
-<!-- Main content -->
-<h1>PA Community Championship<br> STANDINGS</h1>
+          <h1 style="font-size:3vw;">PA Community Championship S1 Standings!</h1>
+<img src="StandingsIMG.png" alt="" class="Standings">
 
-<!-- Image -->
-<img src="StandingsIMG.png" alt="Standings Image">
 
-<!-- Next round heading -->
-<h1>NEXT ROUND!</h1>
+<h1 style="font-size:5vw;">LIVE FEED!</h1>
+        <div class="container"> 
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/78oSScbjmXY?si=5VUX9YKgw2NJ1oNM"></iframe>
+          </div>
 
-<!-- Live video container -->
-<div class="live-container">
-    <div class="live">
-        <iframe src="https://www.youtube.com/embed/PamBLT7KyWY?si=zrOMGw-6MbJb_oM-" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-</div>
-
-</body>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
+    </body>
 </html>
