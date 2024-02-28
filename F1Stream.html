@@ -1,5 +1,7 @@
 <html>
+    <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
 body {
@@ -8,74 +10,127 @@ body {
             padding: 0;
             font-family: Arial, sans-serif; /* Use a more modern font */
         }
+        
+    .container {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+  margin: auto;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333; /* Darker navigation bar */
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-        }
+    .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 42%;
+  border: none;
+  border-radius: 15px;
+}
 
-        li {
-            float: left;
-        }
+.mobile-container {
+  max-width: 380px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 20px 16px; /* Increase padding */
-            text-decoration: none;
-            transition: background-color 0.3s; /* Add smooth transition */
-        }
+.topnav {
+  overflow: hidden;
+  background: linear-gradient(to bottom, #000000 0%, #303030 100%);
+  position: relative;
+}
 
-        li a:hover:not(.active) {
-            background-color: #555; /* Darker color on hover */
-        }
+.topnav a:hover {
+  overflow: hidden;
+  background: linear-gradient(to bottom, #006eff 0%, #2f00ff 100%);
+  position: relative;
+}
 
-        .active {
-            background-color: #0004ff; /* Green color for active link */
-        }
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav #myLinks a:hover {
+    background: linear-gradient(to right, #33ccff 0%, #a600ff 100%);
+    color: #000000;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 40px;
+  display: block;
+  border: 1px solid #3c00ff;
+}
+
+.topnav a.icon {
+  background: rgb(0, 0, 0);
+  display: block;
+  position: absolute;
+  right: 2;
+  top: 2.5;
+}
+
+.topnav a.icon:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background: linear-gradient(to right, #000b6b 0%, #3a0059 100%);
+  color: white;
+}
 
 h1 {
-    font-family: sans-serif;
-    padding-top: 5%;
-    text-align: center;
-    color: aliceblue;
+color: white;
+text-align: center;
+margin: 20px;
 }
 
-h4 {
-    color: aliceblue;
+h2 {
+color: white;
+text-align: center;
+margin: 5px;
 }
-
 
     </style>
+    </head>
     <body>
 
-        <ul>
-            <li><a href="index.html">RoArthur</a></li>
-             <li><a href="Standings.html">PA Community Championship</a></li>
-            <li><a class="active" href="#F1">Skysports Live</a></li>
-          </ul>
+        <div class="topnav">
+            <a href="index.html" class="active">RoArthur.online</a>
+            <div id="myLinks">
+              <a href="PAChampionship.html">PA Community Championship</a>
+              <a href="Partners.html">Ro Partners</a>
+              <a href="F1Stream.html">SkySports F1 Stream</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
 
-<h1>F1 STREAM</h1>
-<iframe src="https://wikisport.se/strm/f1.php" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen=""></iframe>
-
-
-
-<h4>It is our policy to respond to any infringement notices and take appropriate actions under the Digital Millennium Copyright Act (DMCA) and other applicable intellectual property laws. RoArthur.com is an Online Service Provider under Title II of the Digital Millennium Copyright Act, 17 U.S.C. Section 512 (“DMCA”). RoArthur.com respects the legitimate rights of copyright owners, expects its users to do the same, and has adopted an efficient notice and take down procedure as required by the DMCA and described herein.</h4>
-<h4>RoArthur.com does not accept responsibility for content hosted on third party websites and does not have any involvement in the downloading/uploading of movies/tv channels, we just source links available thru out the internet. The hosting server or administrator cannot be held responsible for the contents of any linked sources or any outside source contained in this site. We take copyright notice’s seriously, please contact us before any third party. If you want to remove a tv channel from our website.</h4>
-<h4>roarthurv@gmail.com</h4>
-
-
-
-
+<h1 style="font-size:5vw;">Skysports F1 Stream!</h1>
+<h2 style="font-size:1vw;">Get an adblocker as I do NOT control the ads, the streaming service this uses does.</h2>
+<h2><a href="https://adblockplus.org">AD Block Plus</a></h2>
+        <div class="container"> 
+            <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php"></iframe>
+          </div>
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+            </script>
     </body>
-
-
 </html>
