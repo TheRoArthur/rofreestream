@@ -42,6 +42,7 @@ body {
   overflow: hidden;
   background: linear-gradient(to bottom, #000000 0%, #303030 100%);
   position: relative;
+  text-align: center;
 }
 
 .topnav a:hover {
@@ -98,6 +99,14 @@ text-align: center;
 margin: 5px;
 }
 
+.responsive-logos {
+    max-width: 30%;
+margin-top: 3%;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
     </style>
     </head>
     <body>
@@ -105,22 +114,29 @@ margin: 5px;
         <div class="topnav">
             <a href="index.html" class="active">RoArthur.online</a>
             <div id="myLinks">
-              <a href="PAChampionship.html">PA Community Championship</a>
-              <a href="Partners.html">Ro Partners</a>
-              <a href="F1Stream.html">SkySports F1 Stream</a>
+                <a href="index.html">Back To Home</a>
             </div>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
             </a>
           </div>
 
-<h1 style="font-size:5vw;">Skysports F1 Stream!</h1>
-<h2 style="font-size:1vw;">Get an adblocker as I do NOT control the ads, the streaming service this uses does.</h2>
-<h2><a href="https://adblockplus.org">AD Block Plus</a></h2>
-        <div class="container"> 
-            <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen></iframe>
-          </div>
-          <script>
+<h1 style="font-size:5vw;">Motorsports</h1>
+
+<div class="container"> 
+    <h1>F1</h1>
+    <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen></iframe>
+  </div>
+  <div class="container"> 
+    <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen></iframe>
+  </div>
+  <div class="container"> 
+    <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen></iframe>
+  </div>
+
+
+
+<script>
             function myFunction() {
               var x = document.getElementById("myLinks");
               if (x.style.display === "block") {
