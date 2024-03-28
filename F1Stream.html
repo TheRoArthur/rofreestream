@@ -11,23 +11,11 @@ body {
             font-family: Arial, sans-serif; /* Use a more modern font */
         }
         
-    .f1-container {
-  position: relative;
- padding-top: 50%; /* 1:1 Aspect Ratio */
-  margin: auto;
-  display: none;
-}
 
-.fe-container {
-  position: relative;
- padding-top: 50%; /* 1:1 Aspect Ratio */
-  margin: auto;
-}
-
-.wrc-container {
-  position: relative;
- padding-top: 50%; /* 1:1 Aspect Ratio */
-  margin: auto;
+.f1-container, .fe-container, .wrc-container {
+    position: relative;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    display: none; /* Changed to block */
 }
 
     .responsive-iframe {
@@ -37,7 +25,7 @@ body {
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 42%;
+  height: 100%;
   border: none;
   border-radius: 15px;
   margin-top: 5%;
@@ -113,9 +101,17 @@ text-align: center;
 margin: 5px;
 }
 
+.icon {
+  color: white;
+  text-decoration: wavy;
+}
+
+ .icon:hover {
+  color: yellow;
+}
+
 .streamnavbar {
     text-align: center;
-    color: white;
     font-size: 3vw;
 }
 
@@ -136,22 +132,22 @@ margin: 5px;
 
 <h1 style="font-size:5vw;">Motorsports</h1>
 
-<div class="streamnavbar">
-<a href="javascript:void(0);" class="icon" onclick="F1()">F1</a>
-<a href="javascript:void(0);" class="icon" onclick="FormulaE()">FORMULA E</a>
-<a href="javascript:void(0);" class="icon" onclick="WRC()">WRC</a>
+<div class="streamnavbar" id="streamnavtext">
+<a href="javascript:void(0);" class="icon" onclick="F1()" id="F1TextButton">F1</a>
+<a href="javascript:void(0);" class="icon" onclick="FormulaE()" id="FETextButton">FORMULA E</a>
+<a href="javascript:void(0);" class="icon" onclick="WRC()" id="WRCTextButton">WRC</a>
 </div>
 
-<div class="f1-container">
-    <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen id="F1"></iframe>
+<div class="f1-container" id="F1">
+    <iframe class="responsive-iframe" src="https://wikisport.se/strm/f1.php" allowfullscreen></iframe>
 </div>
 
-<div class="fe-container">
-    <iframe class="responsive-iframe" src="https://claplivehdplay.ru/a6e6574b-2d64-44fe-bc2f-808eb04b174c" allowfullscreen id="FormulaE"></iframe>
+<div class="fe-container" id="FormulaE">
+    <iframe class="responsive-iframe" src="https://claplivehdplay.ru/a6e6574b-2d64-44fe-bc2f-808eb04b174c" allowfullscreen ></iframe>
   </div>
 
-  <div class="wrc-container">
-    <iframe class="responsive-iframe" src="https://wikisport.se/0nhl/60.php" allowfullscreen id="WRC"></iframe>
+  <div class="wrc-container" id="WRC">
+    <iframe class="responsive-iframe" src="https://wikisport.se/0nhl/60.php" allowfullscreen ></iframe>
   </div>
 
 
